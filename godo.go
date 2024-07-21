@@ -2,9 +2,10 @@ package main
 
 import (
 	"fmt"
-	"godo/godo/commands"
 	"os"
 	"strings"
+
+	"github.com/aarongill745/godo/commands"
 )
 
 var GlobalTasksFile = "tasks.txt"
@@ -21,8 +22,8 @@ func main() {
 
 }
 
-// Creates a tasks file if it doesnt exist
 func init() {
+	// Create new tasks file
 	_, err := os.Stat(GlobalTasksFile)
 	if os.IsNotExist(err) {
 		os.Create(GlobalTasksFile)
