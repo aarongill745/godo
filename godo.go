@@ -23,8 +23,14 @@ func main() {
 		handleComplete(body)
 	case "init":
 		initApp()
+	case "list":
+		handleList()
 	}
 
+}
+
+func handleList() {
+	commands.List(GlobalTasksFile)
 }
 
 func handleAdd(task string) {
@@ -35,10 +41,10 @@ func handleComplete(line string) {
 	commands.Complete(line, GlobalTasksFile)
 }
 
-// init is a reserved keyword
 func initApp() {
-	// Create new tasks file
 	_, err := os.Stat(GlobalTasksFile)
+
+	// Create new tasks file
 	if os.IsNotExist(err) {
 		os.Create(GlobalTasksFile)
 		return
