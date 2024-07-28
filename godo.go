@@ -1,7 +1,7 @@
+// The first thing that will get executed when running the program.
 package main
 
 import (
-	"fmt"
 	"os"
 	"strings"
 
@@ -11,15 +11,24 @@ import (
 var GlobalTasksFile = "tasks.txt"
 
 func main() {
-	fmt.Println(os.Args[0])
 	command := os.Args[1]
-	task := strings.Join(os.Args[2:], "")
-	fmt.Println(command, task)
+	body := strings.Join(os.Args[2:], "")
+
+	// Command handler
 	switch command {
 	case "add":
-		commands.Add(task)
+		handleAdd(body)
+	case "complete":
+		handleComplete(body)
 	}
+}
 
+func handleAdd(task string) {
+	commands.Add(task)
+}
+
+func handleComplete(line string) {
+	commands.Complete(line, GlobalTasksFile)
 }
 
 func init() {

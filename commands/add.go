@@ -13,7 +13,7 @@ type Task struct {
 
 // Need uppercase to export
 func Add(task string) {
-	CheckIsTaskDuplicate(task, "tasks.txt")
+	checkIsTaskDuplicate(task, "tasks.txt")
 	err := os.WriteFile("tasks.txt", []byte(task), 0777)
 	if err != nil {
 		fmt.Println(err)
@@ -22,7 +22,7 @@ func Add(task string) {
 	}
 }
 
-func CheckIsTaskDuplicate(task string, fileName string) (bool, error) {
+func checkIsTaskDuplicate(task string, fileName string) (bool, error) {
 	f, err := os.Open(fileName)
 	if err != nil {
 		return false, err
