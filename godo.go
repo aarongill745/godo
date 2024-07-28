@@ -2,6 +2,7 @@
 package main
 
 import (
+	"fmt"
 	"os"
 	"strings"
 
@@ -20,7 +21,10 @@ func main() {
 		handleAdd(body)
 	case "complete":
 		handleComplete(body)
+	case "init":
+		initApp()
 	}
+
 }
 
 func handleAdd(task string) {
@@ -31,10 +35,25 @@ func handleComplete(line string) {
 	commands.Complete(line, GlobalTasksFile)
 }
 
-func init() {
+// init is a reserved keyword
+func initApp() {
 	// Create new tasks file
 	_, err := os.Stat(GlobalTasksFile)
 	if os.IsNotExist(err) {
 		os.Create(GlobalTasksFile)
+		return
+	}
+
+	var response string
+	fmt.Println("You have already done this before, are you sure about this? Y / N")
+	for {
+		fmt.Scanln(&response)
+		response = strings.ToLower(response)
+		// Input is valid
+		if response == "y" || response == "n" {
+			break
+		} else {
+			fmt.Println("Invalid input: Y / N")
+		}
 	}
 }
