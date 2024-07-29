@@ -14,11 +14,12 @@ func List(fileName string) {
 		log.Fatal(err)
 	}
 	defer file.Close()
-
+	var Reset = "\033[0m"
+	var Red = "\033[31m"
 	lineNumber := 1
 	scanner := bufio.NewScanner(file)
 	for scanner.Scan() {
-		fmt.Printf("%d: %s\n", lineNumber, scanner.Text())
+		fmt.Printf("%s%d:%s %s\n", Red, lineNumber, Reset, scanner.Text())
 		lineNumber++
 	}
 }
