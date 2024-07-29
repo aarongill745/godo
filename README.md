@@ -1,7 +1,11 @@
 # Godo
 My attempt at toppling atlassian.
 
-A simple CLI tool to keep tasks handy
+
+
+A todo app in the command line written in go. A change of pace from React and .NET
+
+
 
 ### Commands
 add - Add a task to godo
