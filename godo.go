@@ -13,13 +13,14 @@ var GlobalTasksFile = "tasks.txt"
 
 func main() {
 	command := os.Args[1]
-	body := strings.Join(os.Args[2:], "")
 
 	// Command handler
 	switch command {
 	case "add":
+		body := strings.Join(os.Args[2:], " ")
 		handleAdd(body)
 	case "complete":
+		body := os.Args[2]
 		handleComplete(body)
 	case "init":
 		initApp()

@@ -1,13 +1,38 @@
 package commands
 
 import (
-	"io/ioutil"
+	"fmt"
+	"log"
+	"os"
+	"strconv"
+	"strings"
 )
 
-func Complete(line string, fileName string) {
-	// lineNumber := strconv.Atoi(line)
+func Complete(lineToDelete string, fileName string) {
+	lineNumber, err := strconv.Atoi(lineToDelete)
+	if err != nil {
+		log.Fatal(err)
+		return
+	}
 
-	content, _ := ioutil.ReadFile(fileName)
-	print(content)
+	content, err := os.ReadFile(fileName)
+	if err != nil {
+		log.Fatal(err)
+		return
+	}
 
+	lines := strings.Split(string(content), "\n")
+	if lineNumber > len(lines) {
+		fmt.Println("Invalid task")
+		return
+	}
+
+	lines = append(lines[:lineNumber-1], lines[lineNumber:]...)
+	newContent := strings.Join(lines, "\n")
+
+	err = os.WriteFile(fileName, []byte(newContent), 0644)
+	if err != nil {
+		log.Fatal(err)
+		return
+	}
 }
