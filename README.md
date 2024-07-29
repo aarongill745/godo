@@ -1,4 +1,9 @@
 # Godo
-
-# A command line tool to quickly write down and organise tasks
 My attempt at toppling atlassian.
+
+A simple CLI tool to keep tasks handy
+
+### Commands
+add - Add a task to godo
+complete - Complete a task, godone
+list - List all the tasks you have
