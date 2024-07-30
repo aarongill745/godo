@@ -26,8 +26,14 @@ func main() {
 		initApp()
 	case "list":
 		handleList()
+	case "help":
+		handleHelp()
 	}
 
+}
+
+func handleHelp() {
+	commands.Help()
 }
 
 func handleList() {
