@@ -32,7 +32,7 @@ func main() {
 }
 
 func handleHelp() {
-	commands.Help()
+	utils.Help()
 }
 
 func handleList() {
