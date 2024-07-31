@@ -2,11 +2,11 @@
 package main
 
 import (
-	"fmt"
 	"os"
 	"strings"
 
 	"github.com/aarongill745/godo/commands"
+	"github.com/aarongill745/godo/utils"
 )
 
 var GlobalTasksFile = "tasks.txt"
@@ -29,7 +29,6 @@ func main() {
 	case "help":
 		handleHelp()
 	}
-
 }
 
 func handleHelp() {
@@ -49,24 +48,5 @@ func handleComplete(line string) {
 }
 
 func initApp() {
-	_, err := os.Stat(GlobalTasksFile)
-
-	// Create new tasks file
-	if os.IsNotExist(err) {
-		os.Create(GlobalTasksFile)
-		return
-	}
-
-	var response string
-	fmt.Println("You have already done this before, are you sure about this? Y / N")
-	for {
-		fmt.Scanln(&response)
-		response = strings.ToLower(response)
-		// Input is valid
-		if response == "y" || response == "n" {
-			break
-		} else {
-			fmt.Println("Invalid input: Y / N")
-		}
-	}
+	utils.Init(GlobalTasksFile)
 }
