@@ -27,12 +27,12 @@ func main() {
 	case "list":
 		handleList()
 	case "help":
-		handleHelp()
+		handleHelp(os.Args)
 	}
 }
 
-func handleHelp() {
-	utils.Help()
+func handleHelp(arguments []string) {
+	utils.Help(arguments)
 }
 
 func handleList() {
