@@ -57,7 +57,7 @@ func help() {
 
 func helpAdd() {
 	fmt.Println()
-	fmt.Printf("%sAdd:%s A command to add a task that to your list", ColourRed, ColourReset)
+	fmt.Printf("%sAdd:%s Add a task to your list", ColourGreen, ColourReset)
 	fmt.Println()
 	fmt.Println()
 	fmt.Printf("%sUsage:%s\n", ColourBlue, ColourReset)
@@ -67,7 +67,7 @@ func helpAdd() {
 
 func helpList() {
 	fmt.Println()
-	fmt.Printf("%sList:%s A command to list out all current outstanding tasks. This is also how you find out your task id.", ColourRed, ColourReset)
+	fmt.Printf("%sList:%s A command to list out all current outstanding tasks. This is also how you find out your task id.", ColourGreen, ColourReset)
 	fmt.Println()
 	fmt.Println()
 	fmt.Printf("%sUsage:%s\n", ColourBlue, ColourReset)
@@ -77,7 +77,7 @@ func helpList() {
 
 func helpComplete() {
 	fmt.Println()
-	fmt.Printf("%sComplete:%s A command to complete a task that is currently in your list when given a task id", ColourRed, ColourReset)
+	fmt.Printf("%sComplete:%s A command to complete a task that is currently in your list when given a task id", ColourGreen, ColourReset)
 	fmt.Println()
 	fmt.Println()
 	fmt.Printf("%sUsage:%s\n", ColourBlue, ColourReset)
@@ -87,7 +87,7 @@ func helpComplete() {
 
 func helpHelp() {
 	fmt.Println()
-	fmt.Printf("%sHelp:%s A command to provide help on how to use this program.", ColourRed, ColourReset)
+	fmt.Printf("%sHelp:%s A command to provide help on how to use this program.", ColourGreen, ColourReset)
 	fmt.Println()
 	fmt.Println()
 	fmt.Printf("%sUsage:%s\n", ColourBlue, ColourReset)
@@ -98,7 +98,7 @@ func helpHelp() {
 
 func helpInit() {
 	fmt.Println()
-	fmt.Printf("%sHelp:%s A command to initialise the godo app, creating a tasks.exe folder to store your tasks.", ColourRed, ColourReset)
+	fmt.Printf("%sHelp:%s A command to initialise the godo app, creating a tasks.exe folder to store your tasks.", ColourGreen, ColourReset)
 	fmt.Println()
 	fmt.Println()
 	fmt.Printf("%sUsage:%s\n", ColourBlue, ColourReset)

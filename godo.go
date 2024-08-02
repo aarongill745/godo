@@ -28,7 +28,12 @@ func main() {
 		handleList()
 	case "help":
 		handleHelp(os.Args)
+	case "edit":
+
 	}
+}
+func handleEdit(args []string) {
+	commands.Edit(args[2], strings.Join(args[2:], " "))
 }
 
 func handleHelp(arguments []string) {
