@@ -33,7 +33,7 @@ func main() {
 	}
 }
 func handleEdit(args []string) {
-	commands.Edit(args[2], strings.Join(args[2:], " "), GlobalTasksFile)
+	commands.Edit(args[2], strings.Join(args[3:], " "), GlobalTasksFile)
 }
 
 func handleHelp(arguments []string) {

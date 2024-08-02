@@ -38,11 +38,12 @@ func confirmEdit(prevTask string, newTask string, taskId string) {
 	ColourReset := "\033[0m"
 	ColourGreen := "\033[32m"
 	ColourRed := "\033[31m"
+	ColourBlue := "\033[34m"
 
+	fmt.Printf("\nTask %s[%s]%s Edited Successfully", ColourBlue, taskId, ColourReset)
+	fmt.Println("\n------------")
+	fmt.Printf("%s- %s%s\n", ColourRed, prevTask, ColourReset)
+	fmt.Printf("%s+ %s%s\n", ColourGreen, newTask, ColourReset)
 	fmt.Println("------------")
 	fmt.Println("")
-	fmt.Printf("Task %s Edited Successfully", taskId)
-	fmt.Printf("%s%s%s -> %s%s%s", ColourRed, prevTask, ColourReset, ColourGreen, newTask, ColourReset)
-	fmt.Println("")
-	fmt.Println("------------")
 }
