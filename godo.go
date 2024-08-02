@@ -29,11 +29,11 @@ func main() {
 	case "help":
 		handleHelp(os.Args)
 	case "edit":
-
+		handleEdit(os.Args)
 	}
 }
 func handleEdit(args []string) {
-	commands.Edit(args[2], strings.Join(args[2:], " "))
+	commands.Edit(args[2], strings.Join(args[2:], " "), GlobalTasksFile)
 }
 
 func handleHelp(arguments []string) {
