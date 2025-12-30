@@ -1,15 +1,4 @@
 # Godo
-My attempt at toppling atlassian.
+Linus Torvalds made git so he could work on the linux kernel. I made godo so I could write some Go.
 
-
-
-A todo app in the command line written in go. A change of pace from React and .NET
-
-
-
-### Commands
-add - Add a task to godo
-
-complete - Complete a task, godone
-
-list - List all the tasks you have
+I might even pivot this whole project to Rust. What good is a go binary for a command line tool.
