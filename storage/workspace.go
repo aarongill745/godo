@@ -1,17 +1,20 @@
 package storage
 
 import (
+	"errors"
 	"os"
+	"path/filepath"
 )
 
 // GetWorkspacePath returns the path to the global .godo directory
 // Location: ~/.godo/ (cross-platform)
 // Returns error if home directory cannot be determined
 func GetWorkspacePath() (string, error) {
-	// TODO: Use os.UserHomeDir() to get home directory
-	// TODO: Join with ".godo" using filepath.Join()
-	// TODO: Return the path
-	panic("not implemented")
+	osHomeDirectory, err := os.UserHomeDir()
+	if err != nil {
+		return "", errors.New("Could not user home directory")
+	}
+	return filepath.Join(osHomeDirectory, ".godo"), nil
 }
 
 // WorkspaceExists checks if ~/.godo/ directory exists
